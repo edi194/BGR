@@ -9,7 +9,7 @@ def process_images(input_folder):
 
     for file in input_folder.glob('*'):
         if file.suffix in ['.jpg', '.jpeg','.png']:
-            output_path = output_folder / (file.stem + ".out.png")
+            output_path = output_folder / (file.stem + ".png")
 
             with open(file, 'rb') as i:
                 with open(output_path, 'wb') as o:
