@@ -8,7 +8,7 @@ def process_images(input_folder):
     output_folder.mkdir(exist_ok=True)
 
     for file in input_folder.glob('*'):
-        if file.suffix in ['.jpg', '.jpeg','png']:
+        if file.suffix in ['.jpg', '.jpeg','.png']:
             output_path = output_folder / (file.stem + ".out.png")
 
             with open(file, 'rb') as i:
