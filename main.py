@@ -11,7 +11,9 @@ def process_images(input_folder):
     option, index = pick(options, title, indicator='=>', default_index=0)
     selected_model = option
 
-    output_folder = input_folder / 'output'
+    before_folder = input_folder / 'before_bgr'
+    before_folder.mkdir(exist_ok=True)
+    output_folder = input_folder / 'after_bgr'
     output_folder.mkdir(exist_ok=True)
     model_name = new_session(selected_model)
     print('Processing files using model: ' + selected_model)
@@ -19,7 +21,7 @@ def process_images(input_folder):
     getdatetime = datetime.now()
     date_time = getdatetime.strftime("%d_%m_%Y_%H_%M_%S")
 
-    for file in input_folder.glob('*'):
+    for file in before_folder.glob('*'):
         if file.suffix in ['.jpg', '.jpeg','.png', '.JPG', '.JPEG','.PNG']:
             output_path = output_folder / (file.stem + "_" + selected_model + "_" + date_time + ".png")
             print('Opening ' + file.stem)
