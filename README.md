@@ -3,10 +3,10 @@
 ## Features
 
 - Model selector (same as rembg)
-- Will automatically get every image in current directory and remove the Background
+- Will automatically get every image in 'before_bgr' dir
 - Uses [Rembg](https://github.com/danielgatis/rembg)
-- Save output image with the same exact Name 
-- All results are saved in a new created dir 'output'
+- Save output image with model name and current date and time
+- All results are saved in a dir 'after_bgr'
 
 
 ## Usage  
