@@ -1,3 +1,4 @@
+from datetime import datetime
 from rembg import new_session, remove
 from pathlib import Path
 from pick import pick
@@ -14,10 +15,13 @@ def process_images(input_folder):
     output_folder.mkdir(exist_ok=True)
     model_name = new_session(selected_model)
     print('Processing files using model: ' + selected_model)
+    
+    getdatetime = datetime.now()
+    date_time = getdatetime.strftime("%d_%m_%Y_%H_%M_%S")
 
     for file in input_folder.glob('*'):
         if file.suffix in ['.jpg', '.jpeg','.png', '.JPG', '.JPEG','.PNG']:
-            output_path = output_folder / (file.stem + ".png")
+            output_path = output_folder / (file.stem + "_" + selected_model + "_" + date_time + ".png")
             print('Opening ' + file.stem)
 
             with open(file, 'rb') as i:
