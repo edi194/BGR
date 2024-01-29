@@ -10,12 +10,14 @@ def process_images(input_folder):
     for file in input_folder.glob('*'):
         if file.suffix in ['.jpg', '.jpeg','.png', '.JPG', '.JPEG','.PNG']:
             output_path = output_folder / (file.stem + ".png")
+            print('Opening ' + file.stem)
 
             with open(file, 'rb') as i:
                 with open(output_path, 'wb') as o:
                     img_data = i.read()
                     output = remove(img_data)
                     o.write(output)
+                    print('File ' + file.stem + ' done')
 
 
 if __name__ == "__main__":
