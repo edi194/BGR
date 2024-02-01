@@ -9,9 +9,8 @@ import os
 def process_images(input_folder):
     getdatetime = datetime.now()
     date_time = getdatetime.strftime("%d_%m_%Y_%H_%M_%S")
-    log_time = getdatetime.strftime("%d/%m/%Y %H:%M:%S")
 
-    logging.basicConfig(filename=date_time + '_bgr.log', filemode='w', format=log_time + ' - %(message)s')
+    logging.basicConfig(filename=date_time + '_bgr.log', filemode='w', format='%(asctime)s - %(message)s', datefmt='%d/%m/%y %H:%M:%S')
     logging.warning('Warming up...')
     title = 'Choose model which will be used for background removal: '
     options = ['u2net', 'u2netp', 'u2net_human_seg', 'u2net_cloth_seg', 'silueta', 'isnet-general-use', 'isnet-anime', 'sam']
