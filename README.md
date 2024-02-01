@@ -4,9 +4,10 @@
 
 - Model selector (same as rembg)
 - Will automatically get every image in 'before_bgr' dir
-- Uses [Rembg](https://github.com/danielgatis/rembg)
-- Save output image with model name and current date and time
 - All results are saved in a dir 'after_bgr'
+- Save output image with model name and current date and time
+- Will log everything after processing to log file
+- Uses [Rembg](https://github.com/danielgatis/rembg)
 
 
 ## Usage  
